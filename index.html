@@ -34,6 +34,7 @@
     padding: 16px 20px; font-size: 15px; margin: 0 0 36px;
   }
   .lead strong { color: var(--accent); }
+  h3 { font-size: 16px; font-weight: 700; margin: 26px 0 6px; }
   h2 { font-size: 19px; font-weight: 800; letter-spacing: -0.01em; margin: 40px 0 10px; }
   p, li { font-size: 15.5px; }
   ul { padding-left: 22px; margin: 8px 0; }
@@ -54,16 +55,30 @@
 <main>
   <p class="eyebrow">메에 · Privacy Policy</p>
   <h1>개인정보처리방침</h1>
-  <p class="date">시행일: 2026년 7월 18일</p>
-
-  <p class="lead">'메에'(이하 "앱")는 이용자의 개인정보를 소중히 여깁니다. 앱은 <strong>개인정보를 수집하지도, 외부로 전송하지도 않는 구조</strong>로 설계되었습니다. 본 방침은 앱이 다루는 정보와 그 처리 방식을 투명하게 알리기 위해 작성되었습니다.</p>
+  <p class="date">시행일: 2026년 10월 7일 (이전 판 시행일: 2026년 7월 18일)</p>
+  <p class="lead">'메에'(이하 "앱")는 이용자의 개인정보를 소중히 여깁니다. 앱은 <strong>기본적으로 개인정보를 수집하지 않고, 모든 기록을 이용자의 기기에만 저장하는 구조</strong>로 설계되었습니다. 예외는 이용자가 직접 켜는 <strong>'함께 읽기'</strong> 하나입니다. 함께 읽기를 쓰기 시작한 이용자의 최소한의 그룹 정보만 서버(Google Firebase)에 저장되며, <strong>함께 읽기를 쓰지 않으면 지금처럼 내 기록은 하나도 기기 밖으로 나가지 않습니다.</strong> 본 방침은 앱이 다루는 정보와 그 처리 방식을 투명하게 알리기 위해 작성되었습니다.</p>
 
   <h2>1. 수집하는 개인정보</h2>
-  <p><strong>앱은 이용자의 개인정보를 수집하지 않습니다.</strong></p>
+  <p><strong>함께 읽기를 쓰지 않으면, 앱은 이용자의 개인정보를 수집하지 않습니다.</strong></p>
   <ul>
-    <li>회원가입·로그인 절차가 없습니다.</li>
-    <li>개발자가 운영하는 서버가 없어, 이용 기록이 개발자에게 전송되지 않습니다.</li>
+    <li>회원가입·로그인 절차가 없습니다. 함께 읽기도 가입 없이 익명으로 씁니다.</li>
+    <li>이용 기록을 모으는 서버가 없습니다. 성경 본문과 낭독 음원 파일을 받을 때 오가는 것은 <strong>어떤 파일을 받을지</strong>뿐이며, 누가 받았는지는 개발자가 보지 않습니다.</li>
     <li>광고 SDK, 분석(애널리틱스) SDK 등 제3자 추적 도구를 사용하지 않습니다.</li>
+  </ul>
+  <h3>함께 읽기를 쓰는 경우</h3>
+  <p>함께 읽기는 하단 '함께' 탭에서 그룹 만들기 또는 코드로 들어가기를 누를 때 뜨는 안내 화면에서 <strong>'시작할게요'를 누른 이용자만</strong> 씁니다. 누르기 전에는 서버에 아무것도 보내지 않으며, 익명 식별자도 만들지 않습니다. 시작한 뒤 서버에 저장되는 정보는 아래가 전부입니다.</p>
+  <table>
+    <tr><th>항목</th><th>목적</th><th>보관 기간</th></tr>
+    <tr><td>익명 식별자 (가입 정보 없이 Firebase가 만드는 무작위 값)</td><td>누가 어느 그룹의 멤버인지 가르고, 다른 사람이 내 정보를 고치지 못하게 하기</td><td>그룹을 나가거나, 그룹을 끝내거나, 데이터 초기화를 하면 지웁니다. 리더가 그룹에서 내보낸 경우에는 다시 들어오지 못하도록 그 그룹의 '내보낸 목록'에 그룹이 끝날 때까지 남습니다</td></tr>
+    <tr><td>그룹에 보일 이름 (이용자가 정함. 처음에는 앱 닉네임이 채워져 있고 바꿀 수 있음)</td><td>멤버끼리 서로 알아보기</td><td>그룹을 나가면 바로 지웁니다. 리더의 이름은 그룹을 끝낸 뒤에도 그룹 기본 정보에 남았다가 아래 30일 정리 때 지웁니다</td></tr>
+    <tr><td>그룹 정보: 목표 장(책·장), 초대 코드, 만든 시각, 마지막 활동 시각, 끝났는지</td><td>함께 읽기 기능 자체, 오래 쓰지 않은 그룹 정리</td><td>그룹이 끝나도 '이미 끝난 그룹' 안내를 위해 남았다가 아래 30일 정리 때 지웁니다</td></tr>
+    <tr><td>멤버 정보: 들어온 시각, 자리 번호(한 그룹 12명 상한), 지금 목표 장을 다 읽었는지</td><td>명단 순서, 인원 상한, 다 읽었다는 표시(✓)</td><td>그룹을 나가면 바로 지웁니다. 다 읽었는지는 목표 장이 바뀌면 지웁니다. 그룹이 끝나면 모두 지웁니다</td></tr>
+    <tr><td>서버 접속 정보 (IP 주소 등)</td><td>Google이 서비스 운영·보안에 씀</td><td>Google의 방침을 따릅니다. 개발자는 조회하지 않습니다</td></tr>
+  </table>
+  <ul>
+    <li><strong>30일 정리:</strong> 마지막 활동 뒤 30일이 지난 그룹(끝난 그룹 포함)은 개발자가 한 달에 한 번 정리해, 그로부터 30일 안에 그룹의 모든 정보를 지웁니다.</li>
+    <li><strong>서버에 저장하지 않는 것:</strong> 진도, 연속 일수, XP·배지, 저장한 구절, 읽은 시각의 기록, 연락처, 위치. 이 기록은 함께 읽기를 써도 지금처럼 기기에만 있습니다.</li>
+    <li><strong>지표로 보지 않습니다:</strong> 개발자는 서버의 그룹 수·인원을 이용 지표로 분석하지 않습니다. 저장 용량·동시 접속 같은 운영 상태만 확인하고, 그룹 정보는 신고·삭제 요청을 처리할 때와 30일 정리를 할 때에만 다룹니다.</li>
   </ul>
 
   <h2>2. 기기에만 저장되는 정보</h2>
@@ -74,43 +89,89 @@
     <tr><td>활동 기록</td><td>읽기 진도, 연속 일수, XP, 배지, 구절 카드</td></tr>
     <tr><td>설정값</td><td>하루 분량, 시작 시간, 선택한 성경</td></tr>
     <tr><td>성경 본문</td><td>내려받은 개역한글 본문(자유 이용 저작물)</td></tr>
+    <tr><td>낭독 음원</td><td>내려받은 AI 음성 낭독 파일(이용자가 받기를 누른 책만)</td></tr>
+    <tr><td>함께 읽기 (쓰는 경우)</td><td>안내를 지났는지, 들어간 그룹과 코드, 그룹에 쓰는 이름, 마지막으로 본 목표 장</td></tr>
   </table>
-  <p>이 정보는 개발자를 포함한 누구에게도 전송되지 않으며, 기기 밖에서 열람할 수 없습니다.</p>
+  <p>이 표의 정보는 개발자를 포함한 누구에게도 전송되지 않으며, 기기 밖에서 열람할 수 없습니다. 다만 함께 읽기를 쓰는 동안 그룹 이름과 그룹 정보는 1조의 표대로 서버에도 저장됩니다.</p>
 
   <h2>3. 네트워크 이용</h2>
-  <p>앱은 <strong>이용자가 선택한 성경 본문을 내려받을 때에만</strong> 인터넷에 접속합니다.</p>
+  <p>앱은 <strong>성경 본문과 낭독 음원 파일을 받을 때, 그리고 이용자가 함께 읽기를 쓸 때에만</strong> 인터넷에 접속합니다.</p>
   <ul>
     <li>본문 파일은 GitHub(github.com)의 공개 저장소에서 내려받습니다.</li>
-    <li>이 과정에서 GitHub 서버에 일반적인 웹 접속 기록(IP 주소 등)이 남을 수 있으며, 이는 <a href="https://docs.github.com/site-policy/privacy-policies" rel="noopener">GitHub의 개인정보처리방침</a>을 따릅니다.</li>
-    <li>앱이 기기에 저장된 정보를 외부로 전송하는 일은 없습니다.</li>
+    <li>읽기 화면이나 설정 화면을 열면, 낭독 음원을 받을 수 있는 책의 목록 파일을 개발자가 직접 운영하는 음원 서버에서 받아 옵니다. 듣기·받기 버튼을 보여 주는 데 씁니다.</li>
+    <li>낭독 음원은 같은 서버에서 <strong>이용자가 '받기'를 눌러 동의한 책만</strong> 내려받습니다. 저절로 받지 않습니다.</li>
+    <li>받기 전에 모바일 데이터 연결인지 확인해 묻습니다. 그 확인은 기기 안에서만 이루어집니다.</li>
+    <li>본문을 받을 때 GitHub 서버에 일반적인 웹 접속 기록(IP 주소 등)이 남을 수 있으며, 이는 <a href="https://docs.github.com/site-policy/privacy-policies" rel="noopener">GitHub의 개인정보처리방침</a>을 따릅니다. 개발자가 운영하는 음원 서버는 접속 기록을 남기지 않도록 설정되어 있습니다. <strong>개발자는 어느 쪽의 기록도 조회하지 않습니다.</strong></li>
+    <li>함께 읽기는 '시작할게요'를 누른 뒤에만 Google Firebase 서버에 연결합니다. 그룹 화면을 보는 동안, 그룹을 만들거나 들어가거나 '다 읽었어요'를 누르는 등 그룹 동작을 할 때, 그리고 그룹에 있는 이용자의 홈 화면이 그룹의 목표 장을 한 번 확인할 때 연결합니다.</li>
+    <li>그 밖에 앱이 기기에 저장된 정보를 외부로 전송하는 일은 없습니다.</li>
   </ul>
 
   <h2>4. 제3자 제공 및 처리 위탁</h2>
-  <p>앱은 개인정보를 수집하지 않으므로, 제3자에게 제공하거나 처리를 위탁하는 개인정보가 없습니다.</p>
+  <p>앱은 이용자의 개인정보를 제3자에게 제공하지 않습니다.</p>
+  <p>함께 읽기를 위해 아래와 같이 처리를 위탁합니다.</p>
+  <table>
+    <tr><th>받는 자</th><th>위탁하는 일</th></tr>
+    <tr><td>Google LLC (Firebase Authentication)</td><td>익명 식별자 만들기·관리</td></tr>
+    <tr><td>Google LLC (Firebase Realtime Database)</td><td>그룹 정보 저장</td></tr>
+  </table>
+  <h3>개인정보의 국외 이전</h3>
+  <p>함께 읽기를 쓰는 경우, 1조의 정보가 아래와 같이 국외로 이전됩니다.</p>
+  <table>
+    <tr><th>구분</th><th>내용</th></tr>
+    <tr><td>이전받는 자</td><td>Google LLC</td></tr>
+    <tr><td>이전되는 국가</td><td>싱가포르 (Firebase Realtime Database <code>asia-southeast1</code> 지역) / Firebase Authentication: 미국</td></tr>
+    <tr><td>이전되는 항목</td><td>익명 식별자, 그룹에 보일 이름, 그룹 정보(목표 장·초대 코드·시각·끝났는지), 멤버 정보(들어온 시각·자리·다 읽었는지), 서버 접속 정보(IP 주소 등)</td></tr>
+    <tr><td>이전 시기와 방법</td><td>함께 읽기를 쓸 때마다 수시로, 인터넷을 통해 암호화된 연결로 전송</td></tr>
+    <tr><td>이용 목적과 보유 기간</td><td>1조의 표와 같습니다</td></tr>
+    <tr><td>거부 방법과 영향</td><td>함께 읽기를 쓰지 않으면 이전되지 않습니다. 이미 쓰고 있다면 그룹을 나가거나 데이터 초기화를 하면 됩니다. 함께 읽기 말고 다른 기능은 그대로 쓸 수 있습니다</td></tr>
+  </table>
 
   <h2>5. 보유 기간 및 파기</h2>
   <p>기기에 저장된 정보는 이용자가 언제든 직접 삭제할 수 있습니다.</p>
   <ul>
+    <li>앱의 <strong>설정 → 데이터 초기화</strong></li>
     <li>기기 설정 → 애플리케이션 → 메에 → 저장공간 → <strong>데이터 삭제</strong></li>
     <li>또는 <strong>앱 삭제(제거)</strong></li>
   </ul>
-  <p>삭제된 정보는 복구되지 않으며, 개발자는 어떠한 사본도 보유하지 않습니다.</p>
+  <p>삭제된 기기의 정보는 복구되지 않으며, 개발자는 어떠한 사본도 보유하지 않습니다.</p>
+  <p>함께 읽기로 서버에 저장된 정보는 아래와 같이 지웁니다.</p>
+  <ul>
+    <li><strong>그룹 나가기:</strong> 그 그룹의 내 이름·자리·다 읽었는지를 바로 지우고, 익명 식별자도 지웁니다.</li>
+    <li><strong>그룹 끝내기(리더):</strong> 모든 멤버의 이름·자리·다 읽었는지와 내보낸 목록을 바로 지우고, 리더의 익명 식별자를 지웁니다. 그룹 기본 정보(목표 장·초대 코드·리더의 이름·시각)는 30일 정리 때 지웁니다.</li>
+    <li><strong>데이터 초기화(앱의 설정):</strong> 기기의 기록과 함께, 그룹에 있으면 그룹에서 나가고(리더는 그룹을 끝내고) 익명 식별자를 지웁니다.</li>
+    <li><strong>30일 정리:</strong> 마지막 활동 뒤 30일이 지난 그룹은 그로부터 30일 안에 모두 지웁니다.</li>
+    <li><strong>기기의 기록만 지운 경우:</strong> 앱을 지웠거나, 기기 설정에서 데이터를 지웠거나, 인터넷 연결 없이 데이터 초기화를 한 경우에는 서버의 정보가 지워지지 않습니다. 그룹 이름은 리더가 내보내거나 그 그룹이 30일 정리될 때까지 남을 수 있고, 익명 식별자는 Firebase 인증 서버에 남을 수 있습니다. 연결이 끊겨 익명 식별자를 지우지 못한 경우도 같습니다. 이때는 8조의 메일로 <strong>그룹 코드와 그룹에서 쓰던 이름</strong>을 알려 주시면 찾아서 지웁니다.</li>
+  </ul>
 
   <h2>6. 아동의 개인정보</h2>
-  <p>앱은 모든 연령이 이용할 수 있으며, 아동을 포함한 어떤 이용자의 개인정보도 수집하지 않습니다.</p>
+  <p>앱은 모든 연령이 이용할 수 있으며, 함께 읽기를 쓰지 않으면 아동을 포함한 어떤 이용자의 개인정보도 수집하지 않습니다.</p>
+  <p>함께 읽기는 이용자의 연령을 묻지 않습니다. 그룹 이름에는 실명 대신 부르기 편한 이름을 쓰도록 안내하며, 1조에 적은 최소한의 정보만 다룹니다.</p>
 
   <h2>7. 이용자의 권리</h2>
-  <p>모든 데이터가 이용자 기기에만 존재하므로, 열람·정정·삭제 권리는 기기 안에서 직접 행사할 수 있습니다. 앱은 이를 제한하지 않습니다.</p>
+  <p>함께 읽기를 쓰지 않으면 모든 데이터가 이용자 기기에만 존재하므로, 열람·정정·삭제 권리는 기기 안에서 직접 행사할 수 있습니다. 앱은 이를 제한하지 않습니다.</p>
+  <p>함께 읽기로 서버에 저장된 내 정보는 앱 안에서 다룰 수 있습니다.</p>
+  <ul>
+    <li><strong>열람:</strong> 그룹 화면에서 내 이름과 다 읽었다는 표시를 봅니다.</li>
+    <li><strong>정정:</strong> 그룹 화면의 메뉴에서 이름을 바꿉니다.</li>
+    <li><strong>삭제:</strong> 그룹 나가기 또는 데이터 초기화(5조). 앱을 이미 지웠다면 8조의 메일로 요청합니다.</li>
+  </ul>
 
   <h2>8. 문의</h2>
-  <p>개인정보 관련 문의: <strong>philips0413@gmail.com</strong></p>
+  <p>개인정보 관련 문의·삭제 요청: <strong>philips0413@gmail.com</strong></p>
+  <p>함께 읽기에서 부적절한 이름을 보았다면 그룹 화면의 '문제 알리기'로 같은 주소에 알려 주세요.</p>
 
   <h2>9. 방침의 변경</h2>
   <p>본 방침이 변경되는 경우, 앱 업데이트 내역과 본 페이지를 통해 고지합니다.</p>
+  <table>
+    <tr><th>시행일</th><th>바뀐 내용</th></tr>
+    <tr><td>2026년 10월 7일</td><td>'함께 읽기'(익명 그룹) 추가 — 쓰는 경우의 수집 항목·처리 위탁·국외 이전·보관 기간·삭제 방법을 새로 적음</td></tr>
+    <tr><td>2026년 7월 18일</td><td>처음 시행</td></tr>
+  </table>
 
   <section class="en">
     <h2>Privacy Policy (English Summary)</h2>
-    <p><strong>Mae</strong> ("메에") is a Bible-reading habit app. <strong>It does not collect, store, or transmit any personal data.</strong> There are no accounts, no developer servers, no ads, and no analytics SDKs. All app data (nickname, reading progress, settings) is stored only on the user's device and can be erased at any time by clearing app data or uninstalling. The app connects to the internet only to download public-domain Bible text files from GitHub; standard web access logs (such as IP addresses) on GitHub's side are governed by GitHub's privacy policy. Contact: philips0413@gmail.com</p>
+    <p><strong>Mae</strong> ("메에") is a Bible-reading habit app. <strong>Unless you use the optional "Read Together" (함께 읽기) feature, it does not collect, store, or transmit any personal data.</strong> There are no accounts, no ads, and no analytics SDKs. App data (nickname, reading progress, settings) is stored only on your device and can be erased at any time with Settings › Reset data, by clearing app data, or by uninstalling. The app connects to the internet to download public-domain Bible text from GitHub and, for AI narration, to fetch the list of available audio and download audio for books you explicitly tap "download" on, from a server the developer runs that is configured not to keep access logs; GitHub's access logs (such as IP addresses) are governed by GitHub's privacy policy, and the developer does not review them.</p>
+    <p><strong>Read Together.</strong> Only after you tap "Start" in the Read Together introduction, the app creates an anonymous identifier (no sign-up) and stores, on Google Firebase (Google LLC; Realtime Database in Singapore, <code>asia-southeast1</code>; Firebase Authentication in the United States): the anonymous identifier, the display name you choose for the group, the group's target chapter, invite code, timestamps (created, joined, last activity) and whether it has ended, your seat number, and whether you have finished the current chapter. Google also processes connection data such as IP addresses. Reading progress, streaks, saved verses and reading times are never sent. Leaving a group deletes your name and status at once and deletes your anonymous identifier; ending a group (leader) deletes all members' data, and the group's remaining basic data is deleted by a monthly clean-up; groups with no activity for 30 days are deleted within the following 30 days. Resetting data in the app also leaves the group and deletes the identifier. If you uninstalled the app or reset without a connection, email us your group code and display name and we will delete them. The developer does not analyze group counts as usage metrics. Contact: philips0413@gmail.com</p>
   </section>
 </main>
 </body>
